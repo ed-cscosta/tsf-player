@@ -1,0 +1,32 @@
+@mixin track($fill: 0, $color: $default-theme-color) {
+  box-sizing: border-box;
+  border: none;
+  width: $track-w;
+  height: $track-h;
+  background: rgba(232, 232, 232, 0.6);
+
+  @if $fill==1 {
+    & {
+      background: linear-gradient($color, $color)
+        0 /
+        var(--sx)
+        100%
+        no-repeat
+        rgba(232, 232, 232, 0.6);
+    }
+  }
+}
+
+@mixin fill($color: $default-theme-color) {
+  height: $track-h;
+  background: $color;
+}
+
+@mixin thumb($color: $default-theme-color) {
+  box-sizing: border-box;
+  border: none;
+  width: $thumb-d;
+  height: $thumb-d;
+  border-radius: 50%;
+  background: $color;
+}
